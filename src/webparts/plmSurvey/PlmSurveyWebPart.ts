@@ -50,16 +50,6 @@ export default class PlmSurveyWebPart extends BaseClientSideWebPart<IPlmSurveyWe
   }
 
   public render(): void {
-    /*
-    Load external CDN files (JS/CSS)
-    */
-    //SPComponentLoader.loadCss('https://kendo.cdn.telerik.com/2021.2.511/styles/kendo.common-material.min.css');
-    //SPComponentLoader.loadCss('https://kendo.cdn.telerik.com/2021.2.511/styles/kendo.material.min.css');
-    //SPComponentLoader.loadCss('https://kendo.cdn.telerik.com/2021.2.511/styles/kendo.material.mobile.min.css');
-
-    //SPComponentLoader.loadScript('https://kendo.cdn.telerik.com/2021.2.511/js/jszip.min.js');
-    //SPComponentLoader.loadScript('https://kendo.cdn.telerik.com/2021.1.224/js/kendo.all.min.js');
-
     this.domElement.innerHTML = `
       <style>
           body {
@@ -107,11 +97,13 @@ export default class PlmSurveyWebPart extends BaseClientSideWebPart<IPlmSurveyWe
     });
   }
 
+  //@ts-expect-error
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }
 
   // Does not reload on property changes, customer must apply changes
+  //@ts-expect-error
   protected get disableReactivePropertyChanges(): boolean {
     return true;
   }

@@ -113,7 +113,7 @@ export class SPA {
                         Array.from(surveyCategories).forEach((sc, index) => {
                             let stepObj = new Object();
                             stepObj['title'] = sc;
-                            stepObj['buttons'] = (index === 0) ? ['next'] : (index === (surveyCategories.size - 1)) ? ['previous', 'done'] : ['previous', 'next'];
+                            stepObj['buttons'] = (index === 0) ? ['next'] : (index === (surveyCategories.size - 1)) ? ['previous', {name: 'done', text: 'SUBMIT'}] : ['previous', 'next'];
                             stepObj['form'] = new Object();
                             stepObj['form']['orientation'] = 'vertical';
                             stepObj['form']['formData'] = new Object();
