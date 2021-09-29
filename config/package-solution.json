@@ -3,7 +3,7 @@
   "solution": {
     "name": "plm-survey-client-side-solution",
     "id": "90088f82-bc43-49fa-b611-bcf752475d3c",
-    "version": "1.2.0.0",
+    "version": "1.2.1.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {
