@@ -156,7 +156,7 @@ export class SPA {
                             formData: { pl: null, pt: null, vasi: null },
                             items: [{
                                 type: 'group',
-                                label: 'Product Line Management Survey',
+                                label: 'Product Line Management DSO Self-Assessment',
                                 items: [
                                     {field: 'pl', label: 'Product Line', validation: { required: { message: 'This is a required field.' } }, editor: 'DropDownList', editorOptions: {
                                         optionLabel: 'Select the Product Line...',
