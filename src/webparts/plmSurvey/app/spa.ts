@@ -224,6 +224,9 @@ export class SPA {
                             },
                             done: e => {
                                 e.originalEvent.preventDefault();
+                                console.log(e);
+                                $('button[type="submit"]').slice($('button[type="submit"]').length-1).prop('disabled','disabled');
+                                kendo.alert('Your survey responses are being recorded, please wait a moment and do not close the browser window.');
         
                                 // merge form data into a single object
                                 let formData = new Object();
