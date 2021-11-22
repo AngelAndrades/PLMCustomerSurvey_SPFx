@@ -21,6 +21,8 @@ export class SPA {
     protected static wizardOptions: kendo.ui.WizardOptions;
     protected static form: kendo.ui.Form;
     protected static formOptions: kendo.ui.FormOptions;
+    protected static dialog: kendo.ui.Dialog;
+    protected static dialogOptions: kendo.ui.DialogOptions;
     private static instance: SPA;
 
     constructor() {}
@@ -360,7 +362,19 @@ export class SPA {
             await sp.web.lists.getByTitle('Survey Session Tracker').items.filter("CampaignID eq '" + activeCampaignId + "' and AuthorId eq " + userId).get()
             .then(res => {
                 if (res.length > 0) {
-                    kendo.alert('The system has determined that you have already taken this survey. This survey is limited to 1 response per customer. Contact the ACOE Agile Coaching Team if you have any questions.');
+                    this.dialogOptions = {
+                        title: 'DSO Self-Assessment Alert',
+                        closable: false,
+                        content: 'The DSO Self-Assessment is used to gather information on a Team\'s Maturity Level and can only be completed one time.  Contact the ACOE Agile Coaching Team if you have any questions.',
+                        modal: true,
+                        width: 600,
+                        actions: [
+                            { text: 'OK', primary: true, action: () => {
+                                window.location.href = args.thankYouPage;
+                            } }
+                        ]
+                    };
+                    this.dialog = $('#message').kendoDialog(this.dialogOptions).data('kendoDialog');
                 } else {
                     render();
                 }
