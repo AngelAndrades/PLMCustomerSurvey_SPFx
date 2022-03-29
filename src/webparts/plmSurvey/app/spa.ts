@@ -174,8 +174,9 @@ export class SPA {
                                             dataValueField: 'Id',
                                             cascadeFrom: 'pl',
                                             dataSource: ddProductTeam
-                                        }},
-                                        {field: 'vasi', label: 'VASI ID', validation: { required: { message: 'This is a required field.' } }}
+                                        }}
+                                        // removed 3/29/2022
+                                        //{field: 'vasi', label: 'VASI ID', validation: { required: { message: 'This is a required field.' } }}
                                     ]
                                 }],
                                 submit: e => {
@@ -184,7 +185,7 @@ export class SPA {
                                     // Set environment variables
                                     productLine = e.model['pl']['Title'];
                                     productTeam = e.model['pt']['Title'];
-                                    vasiId = e.model['vasi'];
+                                    //vasiId = e.model['vasi'];
 
                                     // Toggle visibility
                                     $('#message').hide();
